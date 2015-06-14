@@ -1,3 +1,26 @@
+/*
+3. Declare a list structure
+struct ListStruct {
+	unsigned int DataH;
+	unsigned int DataL;
+	unsigned int NextPtr;
+}
+struct ListStruct ListArray[1000];
+#define NULL 0xFFFF
+
+a.	ListHead is the first entry index of the list, so that ‘ListArray[ListHead]’ is the first entry.
+b.	Given an index ‘Entry1’, and its next index ‘Entry2’, Entry2 = ListArray[Entry1].NextPtr;
+c.	If ‘Entry2’ equal to NULL, it means Entry1 is the last entry index.
+Else the value of entry ((ListArray[Entry2].DataH<<16)+ListArray[Entry2].DataL) must bigger than the value ((ListArray[Entry1].DataH<<16)+ListArray[Entry1].DataL)
+
+Question:
+Now given 2 numbers DATA_A and DATA_B, please write a function to find if any entry index of the list (DATA_A == DataH) and (DATA_B == DataL).
+Report the entry index match the 2 numbers as “FoundEntry” and it’s previous entry index “PreEntry” (ListArray[PreEntry].NextPtr = FoundEntry)
+
+Ie. FoundEntry = ListHead, PreEntry = NULL
+If no any enty matches, must report not found
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 struct ListStruct {
